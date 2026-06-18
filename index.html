@@ -1,140 +1,251 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GEOCAT · Plataforma de acción comunitaria</title>
-  <link rel="stylesheet" href="index.css" />
+  <title>GeoCat · Plataforma comunitaria para gatos callejeros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="geocat-styles.css" />
 </head>
 <body>
-  <div class="shell">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <div class="page-shell">
     <header class="topbar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
+      <div class="brand-wrap">
+        <div class="logo" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="brand-copy">
           <h1>GEOCAT</h1>
           <p>Plataforma de acción comunitaria para Recoleta</p>
         </div>
       </div>
-      <nav class="nav">
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#problema">Problema</a>
+        <a href="#datos">Datos</a>
         <a href="#solucion">Solución</a>
-        <a href="#funciones">Funciones</a>
+        <a href="#prototipo">Prototipo</a>
         <a href="#implementacion">Implementación</a>
-        <a href="#resultado">Resultado</a>
       </nav>
+
+      <button class="theme-toggle" data-theme-toggle aria-label="Cambiar tema">
+        <span class="theme-icon">◐</span>
+      </button>
     </header>
 
-    <section class="hero">
-      <div class="card hero-copy">
-        <span class="badge">Diseño gráfico · experiencia · territorio</span>
-        <h2>Una plataforma que convierte el problema en acción organizada</h2>
-        <p class="lead">GEOCAT aborda la sobrepoblación de gatos callejeros con una solución híbrida: una experiencia digital para reportar, alertar y educar, complementada con campañas visuales, mapa físico y activaciones barriales.</p>
-        <div class="cta">
-          <button class="btn primary" onclick="go('solucion')">Explorar propuesta</button>
-          <button class="btn secondary" onclick="go('implementacion')">Ver plan</button>
-        </div>
-        <div class="hero-metrics">
-          <div class="metric"><b>Colaboración</b><span>Red de apoyo para coordinar rescates, difusión y participación vecinal.</span></div>
-          <div class="metric"><b>Alertas</b><span>Reportes geolocalizados sobre colonias, gatos perdidos y puntos críticos.</span></div>
-          <div class="metric"><b>Educación</b><span>Contenido claro sobre esterilización, adopción y tenencia responsable.</span></div>
-        </div>
-        <div class="hero-note"><b>Idea madre:</b> no solo informar, sino activar a la comunidad con una experiencia visual, útil y territorial.</div>
-      </div>
+    <main id="contenido">
+      <section class="hero card-section">
+        <div class="hero-copy card">
+          <span class="eyebrow">Proyecto académico · diseño · comunidad · territorio</span>
+          <h2>Una app que transforma la preocupación por los gatos callejeros en acción organizada</h2>
+          <p class="lead">
+            GeoCat nace frente a una problemática real en Recoleta: la sobrepoblación de gatos callejeros,
+            el abandono, la baja esterilización y la falta de herramientas para coordinar ayuda comunitaria.
+          </p>
 
-      <div class="card mock">
-        <div class="phone">
-          <div class="screen">
-            <div class="screen-top">
-              <div class="appname">GEOCAT</div>
-              <div class="chip">Recoleta · Chile</div>
-            </div>
-            <div class="map" aria-label="Mapa conceptual">
-              <div class="zone z1"></div><div class="zone z2"></div><div class="zone z3"></div><div class="zone z4"></div>
-              <div class="pin" style="left:60px;top:58px"></div>
-              <div class="pin orange" style="left:165px;top:108px"></div>
-              <div class="pin" style="right:95px;top:72px"></div>
-              <div class="pin orange" style="right:60px;bottom:42px"></div>
-            </div>
-            <div class="panel-stack">
-              <div class="panel">
-                <h3>Alerta activa</h3>
-                <p>Se detectó una nueva colonia felina en tu sector. Revisa la ubicación y participa desde tu barrio.</p>
-              </div>
-              <div class="panel">
-                <h3>Acciones rápidas</h3>
-                <div class="tags">
-                  <span class="tag active">Reportar</span>
-                  <span class="tag">Adoptar</span>
-                  <span class="tag">Educar</span>
-                  <span class="tag">Compartir</span>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-scroll="prototipo">Ver prototipo</button>
+            <button class="btn btn-secondary" data-scroll="datos">Ver datos clave</button>
+          </div>
+
+          <div class="hero-points">
+            <article>
+              <strong>Colaboración</strong>
+              <span>Conecta vecinos, voluntarios y organizaciones para coordinar ayuda real.</span>
+            </article>
+            <article>
+              <strong>Alertas</strong>
+              <span>Entrega reportes geolocalizados sobre colonias, gatos perdidos y casos urgentes.</span>
+            </article>
+            <article>
+              <strong>Educación</strong>
+              <span>Difunde información útil sobre rescate, esterilización y tenencia responsable.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="app-preview card" id="prototipo">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="screen-header">
+                <div>
+                  <p class="screen-label">Aplicación</p>
+                  <h3>Panel principal</h3>
                 </div>
+                <span class="status-chip">Recoleta · Activa</span>
               </div>
-              <div class="panel">
-                <h3>Misiones comunitarias</h3>
-                <p>Participa en operativos, difunde campañas y ayuda a registrar casos para fortalecer la red local.</p>
+
+              <div class="screen-map">
+                <div class="map-zone zone-1"></div>
+                <div class="map-zone zone-2"></div>
+                <div class="map-zone zone-3"></div>
+                <button class="map-pin pin-green" data-panel="alertas" style="left:18%; top:28%"></button>
+                <button class="map-pin pin-orange" data-panel="reportes" style="left:52%; top:42%"></button>
+                <button class="map-pin pin-green" data-panel="comunidad" style="right:20%; top:26%"></button>
+                <button class="map-pin pin-orange" data-panel="educacion" style="right:12%; bottom:18%"></button>
+              </div>
+
+              <div class="quick-actions" role="tablist" aria-label="Funciones del prototipo">
+                <button class="quick-tag active" data-panel="reportes" role="tab" aria-selected="true">Reportar</button>
+                <button class="quick-tag" data-panel="alertas" role="tab" aria-selected="false">Alertas</button>
+                <button class="quick-tag" data-panel="educacion" role="tab" aria-selected="false">Educar</button>
+                <button class="quick-tag" data-panel="comunidad" role="tab" aria-selected="false">Colaborar</button>
+              </div>
+
+              <div class="panel-view">
+                <article class="info-panel active" data-content="reportes">
+                  <div class="panel-topline">Función principal</div>
+                  <h4>Reportar un caso</h4>
+                  <p>El usuario puede registrar una colonia, subir una observación del sector y marcar la ubicación para activar apoyo comunitario.</p>
+                  <ul>
+                    <li>Ubicación del caso</li>
+                    <li>Descripción breve</li>
+                    <li>Estado de urgencia</li>
+                  </ul>
+                </article>
+
+                <article class="info-panel" data-content="alertas">
+                  <div class="panel-topline">Seguimiento</div>
+                  <h4>Alertas del barrio</h4>
+                  <p>La app informa nuevos casos en el sector para que vecinos y voluntarios puedan reaccionar más rápido y mejor coordinados.</p>
+                  <ul>
+                    <li>Nuevas colonias detectadas</li>
+                    <li>Gatos perdidos</li>
+                    <li>Puntos críticos del mapa</li>
+                  </ul>
+                </article>
+
+                <article class="info-panel" data-content="educacion">
+                  <div class="panel-topline">Aprendizaje</div>
+                  <h4>Educación y orientación</h4>
+                  <p>GeoCat incluye contenidos simples sobre rescate responsable, esterilización, adopción y convivencia con animales callejeros.</p>
+                  <ul>
+                    <li>Tutoriales breves</li>
+                    <li>Protocolos básicos</li>
+                    <li>Consejos para actuar correctamente</li>
+                  </ul>
+                </article>
+
+                <article class="info-panel" data-content="comunidad">
+                  <div class="panel-topline">Red local</div>
+                  <h4>Comunidad organizada</h4>
+                  <p>La plataforma crea vínculos entre personas interesadas en ayudar, facilitando difusión, coordinación y participación barrial.</p>
+                  <ul>
+                    <li>Misiones comunitarias</li>
+                    <li>Difusión de operativos</li>
+                    <li>Red de apoyo vecinal</li>
+                  </ul>
+                </article>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="solucion">
-      <div class="section-head">
-        <div>
-          <h3>Solución integrada</h3>
-          <p>Una propuesta con sistema digital y soporte en el espacio público para aumentar alcance y comprensión.</p>
+      <section class="content-section" id="problema">
+        <div class="section-heading">
+          <span class="section-kicker">01 · Problemática</span>
+          <h3>Un problema urbano que afecta a animales y personas</h3>
+          <p>La sobrepoblación de gatos callejeros en Recoleta está vinculada al abandono, la falta de esterilización y la baja educación sobre tenencia responsable.</p>
         </div>
-      </div>
-      <div class="grid">
-        <article class="feature"><div class="k">Plataforma</div><h4>App central</h4><p>Permite reportar gatos, ubicar colonias, revisar información útil y conectar con acciones concretas en el territorio.</p></article>
-        <article class="feature"><div class="k">Territorio</div><h4>Campaña visual</h4><p>Piezas gráficas, señalética y contenidos en redes para visibilizar el problema y orientar a la comunidad.</p></article>
-        <article class="feature"><div class="k">Comunidad</div><h4>Apoyo presencial</h4><p>Mapa físico, talleres y activaciones barriales para que más personas participen sin depender solo del celular.</p></article>
-      </div>
-    </section>
 
-    <section class="section" id="funciones">
-      <div class="section-head">
-        <div>
-          <h3>Tres funciones clave</h3>
-          <p>El proyecto se organiza alrededor de tres ejes: colaborar, alertar y educar.</p>
+        <div class="three-grid">
+          <article class="info-card">
+            <h4>Bienestar animal</h4>
+            <p>Muchos gatos viven expuestos a enfermedades, reproducción descontrolada y falta de atención constante.</p>
+          </article>
+          <article class="info-card">
+            <h4>Impacto comunitario</h4>
+            <p>La situación genera conflictos de convivencia, preocupación vecinal y deterioro del entorno barrial.</p>
+          </article>
+          <article class="info-card">
+            <h4>Desorganización</h4>
+            <p>Hoy la ayuda existe, pero se mueve entre grupos informales, publicaciones sueltas y acciones sin coordinación.</p>
+          </article>
         </div>
-      </div>
-      <div class="grid">
-        <article class="feature"><div class="k">01</div><h4>Colaboración</h4><p>Espacios de chat y coordinación para apoyar rescates, difusión y vínculos entre vecinos y organizaciones.</p></article>
-        <article class="feature"><div class="k">02</div><h4>Alertas</h4><p>Notificaciones sobre nuevas colonias, gatos perdidos o casos que requieran atención rápida.</p></article>
-        <article class="feature"><div class="k">03</div><h4>Educación</h4><p>Tutoriales simples para actuar correctamente frente a rescates, adopción y tenencia responsable.</p></article>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="implementacion">
-      <div class="section-head">
-        <div>
-          <h3>Ruta de implementación</h3>
-          <p>Pasos claros para pasar de concepto a una prueba real en la comuna.</p>
+      <section class="content-section" id="datos">
+        <div class="section-heading">
+          <span class="section-kicker">02 · Datos clave</span>
+          <h3>Tres datos que validan la necesidad de actuar</h3>
+          <p>Estos datos muestran que el problema no es aislado y que requiere soluciones más organizadas y preventivas.</p>
         </div>
-      </div>
-      <div class="timeline">
-        <div class="step"><div class="num">1</div><h4>Investigar</h4><p>Levantar antecedentes, revisar referentes y comprender mejor las necesidades del usuario.</p></div>
-        <div class="step"><div class="num">2</div><h4>Diseñar</h4><p>Definir identidad visual, estructura de app, campañas y piezas de apoyo para el territorio.</p></div>
-        <div class="step"><div class="num">3</div><h4>Prototipar</h4><p>Construir una primera versión del sistema para evaluar claridad, uso y coherencia visual.</p></div>
-        <div class="step"><div class="num">4</div><h4>Validar</h4><p>Probar con usuarios, recoger observaciones y preparar un piloto en Recoleta.</p></div>
-      </div>
-    </section>
 
-    <section class="section" id="resultado">
-      <div class="footer">
-        <div class="note"><h4>Resultado esperado</h4><p>Una solución que una diseño gráfico, experiencia de usuario y participación ciudadana para responder a un problema social real.</p></div>
-        <div class="note"><h4>Diferenciación</h4><p>No se queda en informar: crea una experiencia activa que transforma la preocupación por el problema en acción organizada.</p></div>
-      </div>
-      <div class="divider"></div>
-      <div class="footbar">
-        <span>GEOCAT · Proyecto académico</span>
-        <span>Colaboración · Alertas · Educación</span>
-      </div>
-    </section>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <strong data-count="4">0</strong>
+            <span>millones de perros y gatos viven en situación de calle en Chile</span>
+          </article>
+          <article class="stat-card">
+            <strong data-count="70">0</strong>
+            <span>% de perros y gatos no están esterilizados</span>
+          </article>
+          <article class="stat-card">
+            <strong data-count="85">0</strong>
+            <span>% de efectividad puede tener la esterilización a largo plazo</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="solucion">
+        <div class="section-heading">
+          <span class="section-kicker">03 · Solución</span>
+          <h3>GeoCat integra información, acción y participación</h3>
+          <p>La propuesta no solo informa: organiza reportes, activa alertas y entrega educación en un solo sistema.</p>
+        </div>
+
+        <div class="solution-grid">
+          <article class="feature-card">
+            <span class="feature-badge">App</span>
+            <h4>Reportes geolocalizados</h4>
+            <p>Permite ubicar colonias, registrar casos y visualizar puntos críticos del territorio.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-badge">Comunidad</span>
+            <h4>Coordinación local</h4>
+            <p>Conecta vecinos, voluntarios y posibles apoyos para actuar de forma más rápida y organizada.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-badge">Aprendizaje</span>
+            <h4>Educación accesible</h4>
+            <p>Entrega contenidos útiles sobre esterilización, rescate, adopción y cuidado responsable.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="implementacion">
+        <div class="section-heading">
+          <span class="section-kicker">04 · Implementación</span>
+          <h3>Del concepto a una validación real</h3>
+          <p>La propuesta está pensada para avanzar desde un prototipo funcional hacia una prueba piloto en Recoleta.</p>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card"><span>1</span><h4>Investigar</h4><p>Entender usuarios, contexto local y referentes existentes.</p></article>
+          <article class="timeline-card"><span>2</span><h4>Diseñar</h4><p>Construir identidad visual, arquitectura de la app y recorrido del usuario.</p></article>
+          <article class="timeline-card"><span>3</span><h4>Prototipar</h4><p>Representar funciones clave y experiencia de uso con una maqueta clara.</p></article>
+          <article class="timeline-card"><span>4</span><h4>Validar</h4><p>Probar con usuarios reales, recoger observaciones y preparar un piloto local.</p></article>
+        </div>
+      </section>
+
+      <section class="closing-band">
+        <div class="closing-card">
+          <h3>¿Qué hace distinta a GeoCat?</h3>
+          <p>No se limita a difundir información: transforma la preocupación individual en una red de apoyo organizada, localizada y orientada a la acción.</p>
+        </div>
+        <div class="closing-card soft">
+          <h3>Resultado esperado</h3>
+          <p>Una herramienta comunitaria que combine diseño, experiencia de usuario y participación ciudadana para responder a un problema social real.</p>
+        </div>
+      </section>
+    </main>
   </div>
 
-  <script src="index.js"></script>
+  <script src="geocat-app.js"></script>
 </body>
 </html>
